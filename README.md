@@ -1,5 +1,7 @@
 # Dalibre · Z-Library 书源
 
+中文 | [English](README.en.md)
+
 在 [Dalibre](https://dalibre.randynamic.org) 的「获取图书」里搜索、查看、下载 Z-Library 的书，Z-Library 被拦或没登录时自动回退到 Library Genesis 镜像。
 
 移植自 calibre 商店插件 [tekofx/zlibrary-calibre-store-plugin](https://github.com/tekofx/zlibrary-calibre-store-plugin)，
