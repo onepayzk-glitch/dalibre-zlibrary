@@ -1,0 +1,4 @@
+node_modules/
+*.dalibre-plugin
+.data/
+.DS_Store

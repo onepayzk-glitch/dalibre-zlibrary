@@ -1,0 +1,65 @@
+{
+  "$schema": "./plugin.schema.json",
+  "id": "io.github.onepayzk.zlibrary",
+  "name": "Z-Library 书源",
+  "version": "0.2.0",
+  "api": 1,
+  "dalibre": ">=0.5.0",
+  "description": "Z-Library 查书（HTML 搜索，自带验证墙求解）；被拦或没登录时回退到 Library Genesis 镜像",
+  "author": "onepayzk-glitch",
+  "license": "GPL-3.0",
+  "icon": "library",
+  "capabilities": {
+    "bookSource": {}
+  },
+  "permissions": {
+    "hosts": [
+      "z-lib.gl",
+      "z-library.sk",
+      "*.cdn-zlib.sk",
+      "*.ncdn.ec",
+      "libgen.li"
+    ]
+  },
+  "settings": [
+    {
+      "key": "source",
+      "title": "搜索来源",
+      "type": "select",
+      "default": "auto",
+      "options": [
+        {
+          "value": "auto",
+          "title": "自动：先 Z-Library，失败转 LibGen"
+        },
+        {
+          "value": "zlib",
+          "title": "只用 Z-Library"
+        },
+        {
+          "value": "libgen",
+          "title": "只用 Library Genesis"
+        }
+      ]
+    },
+    {
+      "key": "zlibrarySite",
+      "title": "Z-Library 站点",
+      "default": "https://z-lib.gl",
+      "description": "只填域名。换成别的镜像要先在 plugin.json 的 hosts 里加这个域名，否则请求会被拒绝"
+    },
+    {
+      "key": "zlibraryCookie",
+      "title": "Z-Library 登录 Cookie",
+      "type": "secret",
+      "description": "登录 Z-Library 后从浏览器复制 remix_userid=...; remix_userkey=...。搜索也用它，下载必须要它。"
+    },
+    {
+      "key": "libgenSite",
+      "title": "LibGen 镜像",
+      "default": "https://libgen.li",
+      "description": "只填域名。目前按 libgen.li 的表格列结构解析，别的镜像可能对不上"
+    }
+  ],
+  "homepage": "https://github.com/onepayzk-glitch/dalibre-zlibrary"
+}
